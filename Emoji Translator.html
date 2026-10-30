@@ -1,0 +1,50 @@
+<!doctype html><html><head><link rel="stylesheet" href="styles.css"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
+<title>Emoji Translator</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Emoji Translator<span class="face" aria-hidden="true">🔤</span></h1>
+      <p class="sub">Type a sentence and turn its words into emoji. Words with no emoji stay as they are.</p>
+    </div>
+    <label class="lang" for="lang">Input language
+      <select id="lang">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="mn">Монгол</option>
+      </select>
+    </label>
+  </header>
+
+  <div class="panes">
+    <section class="pane">
+      <h2><span>Your text</span><span id="count">0 chars</span></h2>
+      <textarea id="input" aria-label="Text to translate">I love pizza and coffee in the morning! My dog is happy, but the cat is angry at 3 o'clock. Let's go to the beach with friends ☀</textarea>
+    </section>
+    <section class="pane">
+      <h2><span>Emoji version</span><button class="copy" id="copy" type="button">Copy</button></h2>
+      <div class="out" id="output" aria-live="polite"><span class="empty">Your translation appears here.</span></div>
+    </section>
+  </div>
+
+  <div class="bar">
+    <button class="btn primary" id="translate" type="button">Translate</button>
+    <button class="btn ghost" id="clear" type="button">Clear</button>
+    <span class="warn" id="warn" hidden></span>
+    <span class="stat" id="stat"></span>
+  </div>
+
+  <section class="gloss">
+    <h3>Words matched</h3>
+    <div class="chips" id="chips"><p class="hint">Translate something to see which words became emoji, with their Unicode codepoints.</p></div>
+  </section>
+</div>
+
+<script src="script.js" defer></script>
+
+</body></html>
